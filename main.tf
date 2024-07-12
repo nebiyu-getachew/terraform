@@ -122,16 +122,27 @@ resource "aws_instance" "myapp-server" {
 
     #user_data = file("entry-script.sh")
 
+    connection {
+        type = "ssh"
+        host = self.public_ip
+        user = "ec2-user"
+        private_key = file(var.private_key_location)
+    }
+
+    provisioner "file" {
+        source = "entry-script.sh"
+        destination = "/home/ec2-user/entry-script-on-ec2.sh"
+    }
+
+    provisioner "remote-exec" {
+        script = file("entry-script.sh")
+    }
+
+    provisioner "local-exec" {
+        command = "echo ${self.public_ip} > output.txt"
+    }
+
     tags = {
         Name: "${var.env_prefix}-server"
     }
-
-      user_data = <<EOF
-                 !/bin/bash
-                 apt-get update && apt-get install -y docker-ce
-                 systemctl start docker
-                 usermod -aG docker ec2-user
-                 docker run -p 8080:8080 nginx
-              EOF
-
 }
