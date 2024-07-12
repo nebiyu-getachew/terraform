@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## This project belongs to a Udemy Course
 [Complete Terraform Course - Beginner to Advanced 2021](https://www.youtube.com/watch?v=m3cKkYXl-8o&ab_channel=TechWorldwithNana)
 
@@ -15,6 +16,8 @@
 - Installation Guides for AWS CLI: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html (not needed until "Environment Variable" Lecture)
 
 
+=======
+>>>>>>> origin/main
 ## Versions used in the course
 - Terraform - 1.1.6
 - AWS provider - 4.2.0
@@ -64,4 +67,8 @@
 - Internet Gateway - a VPC component: https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html
 - Security Group - Virtual Firewall: https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html
 - Route Table - Configuring Network Traffic: https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html
+<<<<<<< HEAD
 - Amazon S3  - Simple Storage: https://aws.amazon.com/s3/ (Udemy Section 7: when configuring Remote State)
+=======
+- Amazon S3  - Simple Storage: https://aws.amazon.com/s3/ (Udemy Section 7: when configuring Remote State)
+>>>>>>> origin/main
